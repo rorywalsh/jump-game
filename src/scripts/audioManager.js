@@ -3,108 +3,108 @@ import { SoundHandler } from './soundHandler.js';
 export class AudioManager {
     static SOUNDS = {
         BACKGROUND_SONG: {
-            url: 'sounds/piano-arp-live-update.aac',
+            url: 'sounds/background.wav',
             volume: 0.07,
             loop: true,
         },
         BOSS_SONG: {
-            url: 'sounds/desert-trail.aac',
+            url: 'sounds/2.ogg',
             volume: 0.35,
             loop: true,
         },
         FINALE_SONG: {
-            url: 'sounds/stranger-mix-2.aac',
+            url: 'sounds/3.ogg',
             volume: 0.2,
             loop: true,
         },
         BOSS_CELEBRATION_SONG: {
-            url: 'sounds/boss-celebration.aac',
+            url: 'sounds/4.ogg',
             volume: 0.3,
         },
         SHIELD_SONG: {
-            url: 'sounds/shield-song.aac',
+            url: 'sounds/5.ogg',
             volume: 0.4,
         },
         GEM_COLLECTED: {
-            url: 'sounds/collectable.aac',
-            volume: 0.45,
+            url: 'sounds/6.ogg',
+            volume: 0.1 ,
             preloadCount: 10,
         },
         BIG_BOMB: {
-            url: 'sounds/fire-ball.aac',
+            url: 'sounds/7.ogg',
             volume: 0.025,
         },
         HEALTH_UP: {
-            url: 'sounds/health-up.aac',
+            url: 'sounds/8.ogg',
             volume: 0.2,
         },
         PLAYER_JUMP: {
-            url: 'sounds/jump.aac',
+            url: 'sounds/9.ogg',
             volume: 0.08,
             preloadCount: 5,
         },
         PLAYER_SHOOT: {
-            url: 'sounds/shoot.aac',
+            url: 'sounds/10.ogg',
             volume: 0.16,
             preloadCount: 10,
         },
         LASER_COLLECTED: {
-            url: 'sounds/laser-collected.aac',
+            url: 'sounds/11.ogg',
             volume: 0.08,
         },
         LASER_GUN: {
-            url: 'sounds/laser-gun.aac',
+            url: 'sounds/12.ogg',
             volume: 0.25,
         },
         BOMB: {
-            url: 'sounds/bomb.aac',
+            url: 'sounds/13.ogg',
             volume: 0.04,
             preloadCount: 20,
         },
         PLAYER_HIT: {
-            url: 'sounds/player-hit.aac',
+            url: 'sounds/14.ogg',
             volume: 0.25,
         },
         ENEMY_HIT: {
-            url: 'sounds/enemy-hit.aac',
+            url: 'sounds/15.ogg',
             volume: 0.2,
             preloadCount: 20,
         },
         START_BOSS_LEVEL: {
-            url: 'sounds/start-boss-level.aac',
+            url: 'sounds/16.ogg',
             volume: 0.18,
         },
         ROBOTIC_DEATH: {
             // Unused, but neat, use for final boss!!
-            url: 'sounds/robotic-death.aac',
+            url: 'sounds/17.ogg',
             volume: 0.2,
         },
         BOSS_SHOT_1: {
-            url: 'sounds/boss-hit.aac',
+            url: 'sounds/18.ogg',
             volume: 0.3,
         },
         BOSS_SHOT_2: {
-            url: 'sounds/boss-hit-2.aac',
+            url: 'sounds/19.ogg',
             volume: 0.3,
         },
         BOSS_SHOT_4: {
-            url: 'sounds/boss-hit-3.aac',
+            url: 'sounds/20.ogg',
             volume: 0.3,
         },
         BOSS_4_SHOT_1: {
-            url: 'sounds/boss-4-vox-1.aac',
+            url: 'sounds/21.ogg',
             volume: 0.2,
         },
         BOSS_4_SHOT_2: {
-            url: 'sounds/boss-4-vox-2.aac',
+            url: 'sounds/22.ogg',
             volume: 0.2,
         },
         BOSS_5_SHOT: {
-            url: 'sounds/boss-5-shot.aac',
+            url: 'sounds/23.ogg',
             volume: 0.6,
         },
         BOSS_DEAD: {
-            url: 'sounds/boss-dead.aac',
+            url: 'sounds/17.ogg',
             volume: 0.25,
         },
     };
