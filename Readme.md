@@ -9,6 +9,8 @@ HTML 2D vertical scroller game:
 * Collect gems to earn health
 * Kill enemies to earn points
 
+> This fork replaces all original sounds with placeholder sound files. See audioManager.js and the `./src/sounds` directory for more info. 
+
 ## Browser Support
 
 Only tested and working on Mac Chrome (probably works on Windows Chrome).
@@ -35,5 +37,4 @@ https://chrisworman.github.io/jump-game/
 | World 1 | Final Boss |
 |---|---|
 | ![Screenshot 2023-08-13 at 3 53 41 PM](https://github.com/chrisworman/jump-game/assets/5204921/aa9d9547-9221-4ada-ab2f-ffa3ff59566f) | ![Screenshot 2023-08-13 at 3 54 11 PM](https://github.com/chrisworman/jump-game/assets/5204921/3c8b4f97-0872-4d6b-a9e0-c2e0e06b89cc) |
-
 
