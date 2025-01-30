@@ -3,6 +3,8 @@
 
 ![favicon-32x32](https://github.com/chrisworman/jump-game/assets/5204921/71a7b732-b325-4e26-acbb-8d43e3cd11c5)
 
+> **This fork (for Sound Design students) replaces all original sounds with placeholder sound files. See audioManager.js and the `./src/sounds` directory for more info** 
+
 Hack to allow settings of level/world (replace current `startNewgame()` function in game.js)
 
 ```
@@ -67,8 +69,6 @@ HTML 2D vertical scroller game:
 * Beat each level by making it to the top
 * Collect gems to earn health
 * Kill enemies to earn points
-
-> This fork replaces all original sounds with placeholder sound files. See audioManager.js and the `./src/sounds` directory for more info. 
 
 ## Browser Support
 
