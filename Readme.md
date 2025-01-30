@@ -16,7 +16,7 @@ Hack to allow settings of level/world (replace current `startNewgame()` function
 
         
         //hack to change levels..
-        const worldToStartAt = 0;
+        const worldToStartAt = 1;
         const query = new URLSearchParams(window.location.search);
         query.set('world', worldToStartAt);
         const newUrl = `${window.location.pathname}?${query.toString()}`;
