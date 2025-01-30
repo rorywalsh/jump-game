@@ -43,6 +43,11 @@ export class AudioManager {
             volume: 0.08,
             preloadCount: 5,
         },
+        PLAYER_DROP: {
+            url: 'sounds/2.ogg',
+            volume: 0.08,
+            preloadCount: 5,
+        },
         PLAYER_SHOOT: {
             url: 'sounds/10.ogg',
             volume: 0.16,

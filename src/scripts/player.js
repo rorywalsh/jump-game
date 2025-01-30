@@ -138,6 +138,7 @@ export class Player extends Entity {
         // React to user drop
         if (!this.mover.dropping && !this.mover.jumping && this.game.userControls.drop) {
             this.mover.drop();
+            this.game.audioManager.play(AudioManager.SOUNDS.PLAYER_DROP);
         }
 
         // Update the mover
