@@ -3,6 +3,65 @@
 
 ![favicon-32x32](https://github.com/chrisworman/jump-game/assets/5204921/71a7b732-b325-4e26-acbb-8d43e3cd11c5)
 
+Hack to allow settings of level/world (replace current `startNewgame()` function in game.js)
+
+```
+    startNewGame() {
+        // Update state before UI
+        this.stats = new Stats(this);
+        this.gameTime = 0;
+        this.lastUpdateTime = null;
+
+        
+        //hack to change levels..
+        const worldToStartAt = 0;
+        const query = new URLSearchParams(window.location.search);
+        query.set('world', worldToStartAt);
+        const newUrl = `${window.location.pathname}?${query.toString()}`;
+        window.history.pushState(null, "", newUrl);
+
+        this.levelManager.reset();
+        //level to start at..
+        this.levelManager.levelNumber = 0;
+
+        this.level = this.levelManager.getNextLevel();
+        this.background = new Background(this, true);
+        // TODO: this is a hack to handle restarting from beating the game
+        if (this.soundHandler) {
+            this.soundHandler.stop();
+            this.soundHandler = null;
+        }
+        this.level.world.playSong();
+
+        this.hud.displayLevel(this.level);
+        this.hud.displayPoints(0);
+        this.player.reset();
+        this.setGemCount(0);
+        this.bullets = [];
+        Bullet.SpawnReusePool = [];
+        this.collectables = [];
+        this.enemies = [];
+        Bomb.SpawnReusePool = [];
+        Rocket.SpawnReusePool = [];
+        this.platforms.currentSprites = this.level.platformSprites;
+        this.enemies = this.level.spawnInitialEnemies();
+        this.collectables = this.level.spawnCollectables();
+
+        // Update UI
+        this.filterManager.animate(
+            (fm, amountDone) => {
+                fm.blurPixels = 10 - 10 * amountDone;
+                fm.brightnessPercent = 100 * amountDone;
+            },
+            this.gameTime,
+            1000
+        );
+
+        this.state = GameState.PLAYING;
+    }
+```
+
+
 HTML 2D vertical scroller game:
 
 * Beat each level by making it to the top
