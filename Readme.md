@@ -5,63 +5,7 @@
 
 > **This fork (for Sound Design students) replaces all original sounds with placeholder sound files. See audioManager.js and the `./src/sounds` directory for more info** 
 
-Hack to allow settings of level/world (replace current `startNewgame()` function in game.js)
-
-```
-    startNewGame() {
-        // Update state before UI
-        this.stats = new Stats(this);
-        this.gameTime = 0;
-        this.lastUpdateTime = null;
-
-        
-        //hack to change levels..
-        const worldToStartAt = 1;
-        const query = new URLSearchParams(window.location.search);
-        query.set('world', worldToStartAt);
-        const newUrl = `${window.location.pathname}?${query.toString()}`;
-        window.history.pushState(null, "", newUrl);
-
-        this.levelManager.reset();
-        //level to start at..
-        this.levelManager.levelNumber = 0;
-
-        this.level = this.levelManager.getNextLevel();
-        this.background = new Background(this, true);
-        // TODO: this is a hack to handle restarting from beating the game
-        if (this.soundHandler) {
-            this.soundHandler.stop();
-            this.soundHandler = null;
-        }
-        this.level.world.playSong();
-
-        this.hud.displayLevel(this.level);
-        this.hud.displayPoints(0);
-        this.player.reset();
-        this.setGemCount(0);
-        this.bullets = [];
-        Bullet.SpawnReusePool = [];
-        this.collectables = [];
-        this.enemies = [];
-        Bomb.SpawnReusePool = [];
-        Rocket.SpawnReusePool = [];
-        this.platforms.currentSprites = this.level.platformSprites;
-        this.enemies = this.level.spawnInitialEnemies();
-        this.collectables = this.level.spawnCollectables();
-
-        // Update UI
-        this.filterManager.animate(
-            (fm, amountDone) => {
-                fm.blurPixels = 10 - 10 * amountDone;
-                fm.brightnessPercent = 100 * amountDone;
-            },
-            this.gameTime,
-            1000
-        );
-
-        this.state = GameState.PLAYING;
-    }
-```
+To change the current levels, go to game.js, and look for the `startNewgame()` function. IN it you will see variables that set the world and level number. 
 
 
 HTML 2D vertical scroller game:
