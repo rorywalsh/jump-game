@@ -98,7 +98,19 @@ export class Game {
         this.stats = new Stats(this);
         this.gameTime = 0;
         this.lastUpdateTime = null;
+
+        
+        //hack to change levels..
+        const worldToStartAt = 1;
+        const query = new URLSearchParams(window.location.search);
+        query.set('world', worldToStartAt);
+        const newUrl = `${window.location.pathname}?${query.toString()}`;
+        window.history.pushState(null, "", newUrl);
+
         this.levelManager.reset();
+        //level to start at..
+        this.levelManager.levelNumber = 0;
+
         this.level = this.levelManager.getNextLevel();
         this.background = new Background(this, true);
         // TODO: this is a hack to handle restarting from beating the game
@@ -107,6 +119,7 @@ export class Game {
             this.soundHandler = null;
         }
         this.level.world.playSong();
+
         this.hud.displayLevel(this.level);
         this.hud.displayPoints(0);
         this.player.reset();
