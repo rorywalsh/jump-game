@@ -29,12 +29,6 @@ More critically, canvas filters, which the game relies upon, are not supported b
 
 That being said, I have implemented on-screen controls when a mobile browser is detected in case these issues are ever resolved.
 
-## Play Now
-
-The latest version can be played here:
-
-https://chrisworman.github.io/jump-game/
-
 ## Screenshot
 
 | World 1 | Final Boss |
